@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+ * Edge currency flag block
+ *
+ * @category   Edge
+ * @package    Edge_CurrencyFlag
+ * @author     outer/edge <hello@outeredgeuk.com>
+ -->
+<layout>
+    <adminhtml_system_currencyflag_index>
+        <reference name="content">
+            <block type="currencyflag/adminhtml_system_currencyflag" name="mage.system.currencyflag" template="edge/currencyflag/grid.phtml"/>
+        </reference>
+    </adminhtml_system_currencyflag_index>
+</layout>
