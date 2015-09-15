@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!--
+ * Edge currency flag block
+ *
+ * @category   Edge
+ * @package    Edge_CurrencyFlag
+ * @author     outer/edge <hello@outeredgeuk.com>
+ -->
+<config>
+    <modules>
+        <Edge_CurrencyFlag>
+             <version>1.0.0.0.0</version>
+        </Edge_CurrencyFlag>
+    </modules>
+    <global>
+        <models>
+            <currencyflag>
+                <class>Edge_CurrencyFlag_Model</class>
+            </currencyflag>
+        </models>
+        <helpers>
+            <currencyflag>
+                <class>Edge_CurrencyFlag_Helper</class>
+            </currencyflag>
+        </helpers>
+        <blocks>
+            <currencyflag>
+                <class>Edge_CurrencyFlag_Block</class>
+            </currencyflag>
+        </blocks>
+        <events>
+            <currency_display_options_forming>
+                <observers>
+                    <edge_currencyflag_currency_display_options>
+                        <class>currencyflag/observer</class>
+                        <method>currencyDisplayOptions</method>
+                    </edge_currencyflag_currency_display_options>
+                </observers>
+            </currency_display_options_forming>
+        </events>
+    </global>
+    <default>
+        <system>
+            <media_storage_configuration>
+                <allowed_resources>
+                    <currencyflag_image_folder>currencyflag</currencyflag_image_folder>
+                </allowed_resources>
+            </media_storage_configuration>
+        </system>
+    </default>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <currencyflag>Edge_CurrencyFlag_Adminhtml</currencyflag>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <currencyflag>
+                    <file>edge/currencyflag.xml</file>
+                </currencyflag>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

@@ -1,0 +1,72 @@
+<?php
+/**
+ * Edge currency flag block
+ *
+ * @category   Edge
+ * @package    Edge_CurrencyFlag
+ * @author     outer/edge <hello@outeredgeuk.com>
+ */
+?>
+<?php
+/**
+ * @var $this Edge_Currencyflag_Block_Adminhtml_System_Currencyflag
+ */
+?>
+<div class="content-header">
+    <table cellspacing="0">
+        <tr>
+            <td style="width:50%;"><h3 class="icon-head head-system-currency"><?php echo $this->getHeader() ?></h3></td>
+            <td class="form-buttons">
+                <?php
+                    echo $this->getSaveButtonHtml();
+                ?>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<?php $this->getCurrencyFlagsData();?>
+
+<form id="currency_flags_form" action="<?php echo $this->getFormActionUrl() ?>" method="post" enctype="multipart/form-data">
+<!--<form id="currency_flags_form" action="<?php echo $this->getFormActionUrl() ?>" method="post">-->
+    <input name="form_key" type="hidden" value="<?php echo $this->getFormKey() ?>" />
+
+    <div class="entry-edit">
+        <div class="fieldset fieldset-wide">
+            <div class="grid">
+                <div class="hor-scroll">
+                    <table cellspacing="0" class="data table-cat-img-sizes">
+                        <colgroup>
+                            <col width="15%"/>
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr class="headings">
+                                <th><span class="nobr"><span class="not-sort"><?php echo $this->__('Currency'); ?></span></span></th>
+                                <th><span class="nobr"><span class="not-sort"><?php echo $this->__('Flag'); ?></span></span></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($this->getCurrencyFlagsData() as $code => $data): ?>
+                            <tr>
+                                <td class="label">
+                                <label for="<?php echo $code; ?>"><?php echo $code; ?> (<?php echo $data['displayName']; ?>)</label>
+                                </td>
+                                <td class="value">
+                                    <input id="custom_currency_flag<?php echo $code; ?>" class="input-file" type="file" value="<?php echo Mage::helper('core')->quoteEscape($data['displayFlag']); ?>" name="<?php echo $code; ?>">
+                                    <?php if(isset($data['displayFlag'])) :?><br/><img src="<?php echo $data['displayFlag'] ?>" /><?php endif; ?>
+                                    <input class="input-text" type="hidden" value="<?php echo Mage::helper('core')->quoteEscape($data['displayFlag']); ?>" name="custom_currency_flag[<?php echo $code; ?>]">
+                                </td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script type="text/javascript">
+    var currencyFlagsForm = new varienForm('currency_flags_form');
+</script>
+
