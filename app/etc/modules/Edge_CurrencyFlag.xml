@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Edge_CurrencyFlag>
+            <active>true</active>
+            <codePool>local</codePool>
+            <depends>
+                <Mage_Adminhtml/>
+                <Mage_CurrencySymbol/>
+            </depends>
+        </Edge_CurrencyFlag>
+    </modules>
+</config>

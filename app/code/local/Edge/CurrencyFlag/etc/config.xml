@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Edge_CurrencyFlag>
+            <version>1.0.0</version>
+        </Edge_CurrencyFlag>
+    </modules>
+    <default>
+        <system>
+            <media_storage_configuration>
+                <allowed_resources>
+                    <currencyflag_image_folder>currencyflag</currencyflag_image_folder>
+                </allowed_resources>
+            </media_storage_configuration>
+        </system>
+    </default>
+    <adminhtml>
+        <events>
+            <controller_action_postdispatch_adminhtml_system_currencysymbol_save>
+                <observers>
+                    <currencyflag_save>
+                        <class>Edge_CurrencyFlag_Model_Observer</class>
+                        <method>saveCurrencyFlags</method>
+                    </currencyflag_save>
+                </observers>
+            </controller_action_postdispatch_adminhtml_system_currencysymbol_save>
+        </events>
+        <layout>
+            <updates>
+                <currencyflag>
+                    <file>edge/currencyflag.xml</file>
+                </currencyflag>
+            </updates>
+        </layout>
+    </adminhtml>
+</config>

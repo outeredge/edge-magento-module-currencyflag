@@ -1,0 +1,25 @@
+{
+    "name": "outeredge/edge-magento-module-currencyflag",
+    "type": "magento-module",
+    "description": "Currency Flag Image Module for Magento by outer/edge",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "outer/edge",
+            "email": "support@outeredgeuk.com"
+        }
+    ],
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    },
+    "extra": {
+        "map": [
+            ["app/code/local/Edge/CurrencyFlag", "app/code/local/Edge/CurrencyFlag"],
+            ["app/etc/modules/Edge_CurrencyFlag.xml", "app/etc/modules/Edge_CurrencyFlag.xml"],
+            ["app/design/adminhtml/default/default/layout/edge/currencyflag.xml", "app/design/adminhtml/default/default/layout/edge/currencyflag.xml"],
+            ["app/design/adminhtml/default/default/template/edge/currencyflag", "app/design/adminhtml/default/default/template/edge/currencyflag"],
+            ["app/design/frontend/base/default/layout/edge/currencyflag.xml", "app/design/frontend/base/default/layout/edge/currencyflag.xml"],
+            ["app/design/frontend/base/default/template/edge/currencyflag", "app/design/frontend/base/default/template/edge/currencyflag"]
+        ]
+    }
+}

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<layout>
+    <adminhtml_system_currencysymbol_index>
+        <reference name="mage.system.currencysymbol">
+            <action method="setTemplate">
+                <template>edge/currencyflag/grid.phtml</template>
+            </action>
+        </reference>
+    </adminhtml_system_currencysymbol_index>
+</layout>
