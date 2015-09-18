@@ -11,7 +11,7 @@
     </div>
     <div class="currencies">
     <?php foreach ($this->getCurrencies() as $code => $name): ?>
-        <a href="<?php echo $this->getSwitchCurrencyUrl($code) ?>">
+        <a href="<?php echo $this->getSwitchCurrencyUrl($code) ?>" <?php if($code == $currentCurrency) echo 'class="currency-switcher-current"' ?>>
             <?php if (isset($currencyFlags[$code])): ?>
                 <img src="<?php echo Mage::getBaseUrl('media') . $currencyFlags[$code] ?>" alt="<?php echo $code ?>">
             <?php endif; ?>
