@@ -7,7 +7,9 @@
         <?php if (isset($currencyFlags[$currentCurrency])): ?>
             <img src="<?php echo Mage::getBaseUrl('media') . $currencyFlags[$currentCurrency] ?>" alt="<?php echo $currentCurrency ?>">
         <?php endif; ?>
-        <span class="name"><?php echo Mage::app()->getLocale()->currency($currentCurrency)->getName() ?> - <?php echo $currentCurrency ?></span>
+        <span class="symbol"><?php echo Mage::app()->getLocale()->currency($currentCurrency)->getSymbol() ?></span>
+        <span class="name"><?php echo Mage::app()->getLocale()->currency($currentCurrency)->getName() ?></span>
+        <span class="code"><?php echo $currentCurrency ?></span>
     </div>
     <div class="currencies">
     <?php foreach ($this->getCurrencies() as $code => $name): ?>
@@ -15,7 +17,9 @@
             <?php if (isset($currencyFlags[$code])): ?>
                 <img src="<?php echo Mage::getBaseUrl('media') . $currencyFlags[$code] ?>" alt="<?php echo $code ?>">
             <?php endif; ?>
-            <span class="name"><?php echo $name ?> - <?php echo $code ?></span>
+            <span class="symbol"><?php echo Mage::app()->getLocale()->currency($code)->getSymbol() ?></span>
+            <span class="name"><?php echo $name ?></span>
+            <span class="code"><?php echo $code ?></span>
         </a>
     <?php endforeach; ?>
     </div>
