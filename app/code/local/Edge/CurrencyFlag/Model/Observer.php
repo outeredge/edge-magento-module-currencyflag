@@ -30,7 +30,7 @@ class Edge_CurrencyFlag_Model_Observer
 
                         $dirPath = Mage::getBaseDir('media') . DS . 'currencyflag' . DS;
                         $result = $uploader->save($dirPath, $image['name']);
-                        $currencyFlags[$currency] = 'currencyflag' . $result['file'];
+                        $currencyFlags[$currency] = 'currencyflag' . DS . $result['file'];
 
                     } catch (Exception $e) {
                         Mage::getSingleton('adminhtml/session')->addError($e->getMessage());
